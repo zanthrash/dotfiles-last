@@ -8,5 +8,12 @@ fi
 # command line interface to it that we can use to just install everything, so
 # yeah, let's do that.
 
-echo "› sudo softwareupdate -i -a"
-sudo softwareupdate -i -a
+echo "› softwareupdate -i -a"
+softwareupdate -i -a
+
+echo "› updating brew and brew bundle"
+# Update Homebrew recipes
+
+# Install all our dependencies with bundle (See Brewfile)
+brew tap homebrew/bundle
+brew bundle || true

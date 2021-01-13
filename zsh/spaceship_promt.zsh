@@ -1,0 +1,4 @@
+eval spaceship_vi_mode_enable
+export SPACESHIP_AWS_SHOW=false
+export SPACESHIP_GCLOUD_SHOW=false
+export SPACESHIP_BATTERY_THRESHOLD=50
