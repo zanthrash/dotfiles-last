@@ -1,15 +1,18 @@
-# holman does dotfiles
+# dotfiles
 
-Your dotfiles are how you personalize your system. These are mine.
+Your dotfiles are how you personalize your system. These are mine and are build around:
 
-I was a little tired of having long alias files and everything strewn about
-(which is extremely common on other dotfiles projects, too). That led to this
-project being much more topic-centric. I realized I could split a lot of things
-up into the main areas I used (Ruby, git, system libraries, and so on), so I
-structured the project accordingly.
+- macOS
+- [homebrew](https://brew.sh/)
+- zsh (default shell on macOs )
+- [oh-my-zsh](https://ohmyz.sh/)
+- [vim](https://www.vim.org/)
+- [ultimate vim config](https://github.com/amix/vimrc)
+
+This is a heavily modified version of a fork of [Zach Holman](https://github.com/holman/dotfiles) dotfile set up
 
 If you're interested in the philosophy behind why projects like these are
-awesome, you might want to [read my post on the
+awesome, you might want to [read Zach's post on the
 subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
 
 ## topical
@@ -24,7 +27,7 @@ symlinked without extension into `$HOME` when you run `script/bootstrap`.
 
 A lot of stuff. Seriously, a lot of stuff. Check them out in the file browser
 above and see what components may mesh up with you.
-[Fork it](https://github.com/holman/dotfiles/fork), remove what you don't
+[Fork it](https://github.com/zanthrash/dotfiles/fork), remove what you don't
 use, and build on what you do use.
 
 ## components
@@ -65,6 +68,19 @@ which sets up a few paths that'll be different on your particular machine.
 defaults, and so on. Tweak this script, and occasionally run `dot` from
 time to time to keep your environment fresh and up-to-date. You can find
 this script in `bin/`.
+
+## Brewfile
+
+I try to use use Homebrew to install these things on my computer:
+
+- App Store apps
+- cli apps
+- binaries
+- fonts
+
+You can reuse this Brewfile but it is probably best to generate your own via
+
+`$ brew bundle dump`
 
 ## bugs
 
