@@ -1,0 +1,141 @@
+    ;; !  | means mandatory
+    ;; #  | means optional
+    ;; C  | left_command
+    ;; T  | left_control
+    ;; O  | left_option
+    ;; S  | left_shift
+    ;; F  | fn
+    ;; Q  | right_command
+    ;; W  | right_control
+    ;; E  | right_option
+    ;; R  | right_shift
+    ;; !! | mandatory command + control + optional + shift (hyper)
+    ;; ## | optional any
+
+{:default true
+
+ :alone 500
+ :delay 200
+ :held 500
+ :sim 200
+ :simlayer-threshold 222
+ :modifiers {;
+             :super-hyper [:command :shift :control :option :fn]
+             :hyper [:command :shift :control :option]
+             :cos [:command :shift :option]
+             :co [:command :option]
+             :cs [:command :shift]
+             :ct [:command :control]
+             :to [:control :option]
+             :ts [:control :shift]
+             :os [:option :shift]
+             ;
+             }
+ :froms {;alias
+         :delete {:key :delete_or_backspace}
+         :return {:key :return_or_enter}
+         :tilde {:key :grave_accent_and_tilde}
+
+
+;         
+         }
+ :tos {;
+       :delete {:key :delete_or_backspace}
+       :tilde {:key :grave_accent_and_tilde}
+       :emoji_picker {:key :spacebar :modi :ct} ;!CTspacebar
+       ; VSCode
+       :focus_editor {:key :e :modi :cs}
+       :focus_terminal {:key :grave_accent_and_tilde :modi :control}
+       :git_lens {:key :g :modi :ts}
+       :find_in_project {:key :f :modi :cs} ;!CSf
+
+       ;
+       }
+ :templates {;
+             :paste "osascript -e '
+                 set the clipboard to \"%s\"
+                 tell application \"System Events\"
+                         keystroke \"v\" using command down
+                 end tell
+               '"
+;            
+             }
+ :applications {;
+                :chrome ["com.google.Chrome"]
+                :code ["com.microsoft.VSCode"]
+                :slack ["com.tinyspeck.slackmacgap"]}
+ :layers {;
+          :escape-mode {:key :escape :alone {:key :escape}}
+          :caps_lock-mode {:key :caps_lock :alone {:key :escape}}
+          ;
+          }
+ :simlayers {;
+             :emoji-mode {:key :z} ;
+;             
+             }
+
+ :main [;
+        {:des "emoji"
+         :rules [:emoji-mode
+                 [:a [:paste ""]]
+                 [:b [:paste "😊"]]
+
+                 [:d [:paste "🧐"]] ;dignified
+                 [:e :emoji_picker]
+                 [:f [:paste "🤦‍♂️"]] ;facepalm️
+                 [:g [:paste "😬"]] ;grimace
+                 [:h [:paste "😍"]] ;heart-eyes
+                 [:i [:paste "👀"]] ;I
+                 [:j [:paste "😂"]] ;joking
+                 [:k [:paste ""]] ;
+                 [:l [:paste "❤️"]] ;love
+                 [:m [:paste "🤯"]] ;mind blown 
+                 [:n :emoji_picker] ;🤷‍♂
+                 [:o [:paste "💩"]] ;pOop
+                 [:p [:paste "🎉"]] ;party
+                 [:q [:paste "🤫"]] ;quiet
+                 [:r [:paste "🚀"]] ;rocket
+                 [:s [:paste "😢"]] ;sad
+                 [:t [:paste "🤔"]] ;thinking
+                 [:u [:paste "🤷‍♂️"]] ;shrUg
+                 [:v [:paste "😎"]] ;very cool
+                 [:w [:paste "😉"]] ;wink:
+                 [:x [:paste "😵"]] ;x-eyes
+                 [:y [:paste "😅"]] ;sweatY
+                 [:left_command [:paste "👍"]]
+                 [:left_option [:paste "👎"]]; 
+                 ;
+                 ]}
+        {:des "caps_lock"
+         :rules [[:caps_lock  :escape]]}
+        {:des "slack"
+         :rules [;
+                 [:condi :slack]
+                 [:left_command :left_command nil {:alone :!Ct}]
+                 [:right_command {:key :a :modi :cs}]
+                 ;
+                 ]}
+        {:des "code"
+         :rules [:code
+                ;;  [:left_command :left_command nil {:alone :focus_editor}]
+                 [:condi :code :caps_lock-mode]
+                 [:g :git_lens]; 
+                 [:t :focus_terminal]
+                 [:f :find_in_project]
+                 ;
+                 ]}
+        {:des "homerow"
+         :rules [:caps_lock-mode
+                 [:##n :delete]
+                 [:##period :delete_or_backspace]
+                 [:##y :home]
+                 [:##o :end]
+                 [:##h :left_arrow]
+                 [:##j :down_arrow]
+                 [:##k :up_arrow]
+                 [:##l :right_arrow]
+                 ;  ;             
+                 ]}
+
+;
+        ]}
