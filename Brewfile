@@ -1,12 +1,20 @@
 # Taps
-tap 'homebrew/cask'
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+
 tap 'neovim/neovim'
+tap "yqrashawn/goku"
+
 # tap 'homebrew/bundle'
 
 # Binaries
 # brew 'svn'
+brew 'ack'
+brew 'bat'
 brew 'gcc'
 brew 'pkg-config'
 brew 'awscli'
@@ -23,7 +31,7 @@ brew 'httpie'
 brew 'curl'
 brew 'wget'
 brew 'neovim'
-# brew 'docker'
+brew 'docker'
 brew 'z'
 brew 'yarn'
 brew 'fzf'
@@ -33,6 +41,7 @@ brew 'ncdu'
 brew 'archey'
 brew 'mackup'
 brew 'thefuck'
+brew "yqrashawn/goku/goku"
 
 # Quicklook
 cask 'qlcolorcode'
@@ -40,6 +49,12 @@ cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
 cask 'qlstephen'
+cask 'qlimagesize'
+cask 'suspicious-package'
+cask 'apparency'
+cask 'quicklookase'
+cask 'qlvideo'
+cask 'mdimagesizemdimporter'
 
 # Fonts
 cask 'font-inconsolata'
@@ -49,14 +64,11 @@ cask 'font-jetbrains-mono'
 cask 'font-ibm-plex'
 cask 'font-hack-nerd-font'
 cask 'font-open-sans'
-
 cask 'font-open-sans-condensed'
-
 cask 'font-source-code-pro'
 cask 'font-hack'
 cask 'font-fira-code'
 cask 'font-fira-mono'
-
 cask 'font-anonymice-powerline'
 cask 'font-consolas-for-powerline'
 cask 'font-dejavu-sans-mono-for-powerline'
@@ -78,7 +90,7 @@ cask '1password-cli'
 cask 'alfred'
 cask 'docker'
 cask 'firefox'
-# cask 'github'
+cask 'github'
 cask 'google-chrome'
 cask 'insomnia'
 cask 'iterm2'
@@ -91,6 +103,7 @@ cask 'bartender'
 
 
 # Mac App Store
+mas "1Password", id: 443987910
 mas 'Evernote', id: 406056744 
 mas 'Moom', id: 419330170
 mas 'Skitch', id: 425955336

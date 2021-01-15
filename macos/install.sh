@@ -16,4 +16,12 @@ echo "› updating brew and brew bundle"
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
-brew bundle || true
+brew bundle
+
+### Reset installed Quicklook plugins
+xattr -d -r com.apple.quarantine ~/Library/QuickLook
+
+qlmanage -r
+qlmanage -r cache
+
+killall "Finder"
