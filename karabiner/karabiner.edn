@@ -122,6 +122,7 @@
                  [:g :git_lens]; 
                  [:t :focus_terminal]
                  [:f :find_in_project]
+                 [:e :focus_editor]
                  ;
                  ]}
         {:des "homerow"
