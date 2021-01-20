@@ -16,3 +16,5 @@ alias .....="cd ../../../.."
 alias k9="kill -9"
 
 alias renode="rm -rf ./node_modules && yarn install"
+
+alias server="python -m SimpleHTTPServer"

@@ -4,11 +4,21 @@
 [hub]
         protocol = https
 [alias]
+        aliases = config --get-regexp alias
         co = checkout
         promote = !$ZSH/bin/git-promote
         wtf     = !$ZSH/bin/git-wtf
         rank-contributors = !$ZSH/bin/git-rank-contributors
         count   = !git shortlog -sn
+        st = status -sb
+        ci = commit
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+        sync = pull --rebase upstream master
+        feature = checkout -b
+        pushFeature = push -u origin
+        pf = push -u origin
+        killFeature = !sh -c 'git branch -D $1 && git push origin --delete $1' -
+        kf = !sh -c 'git branch -D $1 && git push origin --delete $1' -
 [color]
         diff = auto
         status = auto
