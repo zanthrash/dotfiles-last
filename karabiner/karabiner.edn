@@ -35,9 +35,7 @@
          :delete {:key :delete_or_backspace}
          :return {:key :return_or_enter}
          :tilde {:key :grave_accent_and_tilde}
-
-
-;         
+         ;
          }
  :tos {;
        :delete {:key :delete_or_backspace}
@@ -49,6 +47,8 @@
        :git_lens {:key :g :modi :ts}
        :find_in_project {:key :f :modi :cs} ;!CSf
 
+       ; Chrome
+       :open_dev_tools {:key :i :modi :co}
        ;
        }
  :templates {;
@@ -71,7 +71,7 @@
           }
  :simlayers {;
              :emoji-mode {:key :z} ;
-;             
+             ;
              }
 
  :main [;
@@ -79,7 +79,7 @@
          :rules [:emoji-mode
                  [:a [:paste ""]]
                  [:b [:paste "😊"]]
-
+                 [:c [:paste "🤘"]]
                  [:d [:paste "🧐"]] ;dignified
                  [:e :emoji_picker]
                  [:f [:paste "🤦‍♂️"]] ;facepalm️
@@ -123,6 +123,19 @@
                  [:t :focus_terminal]
                  [:f :find_in_project]
                  [:e :focus_editor]
+                 ;
+                 ]}
+        {:des "chrome"
+         :rules [:chrome
+                ;;  [:left_command :left_command nil {:alone :!Ct}]
+                ;;  [:left_option :left_option nil {:alone :!Cw}]
+                 [:condi :chrome :caps_lock-mode]
+                 [:u :!Ct] ;new tab
+                 [:i :!Cw] ;close tab
+                 [:condi :chrome ["multitouch_extension_finger_count_total" 2]]
+                 [:d :open_dev_tools]
+                 [:a :!COleft_arrow]
+                 [:t :!COright_arrow]
                  ;
                  ]}
         {:des "homerow"
