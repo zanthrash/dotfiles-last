@@ -130,10 +130,10 @@
                 ;;  [:left_command :left_command nil {:alone :!Ct}]
                 ;;  [:left_option :left_option nil {:alone :!Cw}]
                  [:condi :chrome :caps_lock-mode]
-                 [:u :!Ct] ;new tab
-                 [:i :!Cw] ;close tab
-                 [:condi :chrome ["multitouch_extension_finger_count_total" 2]]
+                 [:i :!Ct] ;new tab
+                 [:u :!Cw] ;close tab
                  [:d :open_dev_tools]
+                 [:condi :chrome ["multitouch_extension_finger_count_total" 2]]
                  [:a :!COleft_arrow]
                  [:t :!COright_arrow]
                  ;

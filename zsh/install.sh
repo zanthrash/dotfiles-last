@@ -13,7 +13,7 @@ then
 else 
   echo "Installing oh-my-zsh..."
   # git clone --recursive https://github.com/sorin-ionescu/prezto.git $ZPRESTO_DIR
-  ZSH= sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  ZSH= sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
 
   # echo "Prezto installed: symlinking files to $HOME"
   # setopt EXTENDED_GLOB
