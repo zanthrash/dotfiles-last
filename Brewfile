@@ -12,9 +12,10 @@ tap "yqrashawn/goku"
 # tap 'homebrew/bundle'
 
 # Binaries
-# brew 'svn'
+brew 'svn'
 brew 'ack'
 brew 'bat'
+brew 'dive'
 brew 'gcc'
 brew 'pkg-config'
 brew 'awscli'
@@ -33,6 +34,7 @@ brew 'wget'
 brew 'neovim'
 brew 'docker'
 brew 'z'
+brew "zsh-completions"
 brew 'yarn'
 brew 'fzf'
 brew 'htop'
@@ -113,3 +115,5 @@ mas 'ToothFairy', id: 1191449274
 mas 'Bear', id: 1091189122
 mas 'Spark', id: 1176895641
 mas 'Dash', id: 458034879
+mas "Contrast", id: 1254981365
+mas "Tweetbot", id: 557168941
