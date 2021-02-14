@@ -49,7 +49,12 @@
 
        ; Chrome
        :open_dev_tools {:key :i :modi :co}
-       ;
+
+       ; named symbols
+       :open_paren {:key :9 :modi :shift}
+       :open_brace {:key :open_bracket :modi :shift}
+       :greather_than {:key :period :modi :shift}
+       ;  
        }
  :templates {;
              :paste "osascript -e '
@@ -71,6 +76,7 @@
           }
  :simlayers {;
              :emoji-mode {:key :z} ;
+             :spacebar-mode {:key :spacebar}
              ;
              }
 
@@ -108,6 +114,15 @@
                  ]}
         {:des "caps_lock"
          :rules [[:caps_lock  :escape]]}
+        {:des "spacebar"
+         :rules [:spacebar-mode
+                 [:a :open_bracket]
+                 [:s :open_paren]
+                 [:d :open_brace]
+                 [:left_shift [:spacebar :equal_sign :spacebar]] ;  =  =  = 
+                 [:j [:!S9 :!S0 :spacebar :equal_sign :greather_than :spacebar]] ; () =>
+                 ;      
+                 ]}
         {:des "slack"
          :rules [;
                  [:condi :slack]

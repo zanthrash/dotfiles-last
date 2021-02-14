@@ -3,6 +3,10 @@
         path = ~/.gitconfig.local
 [hub]
         protocol = https
+        host = git.target.com
+[github]
+        user = zanthrash
+        host = git.target.com
 [alias]
         aliases = config --get-regexp alias
         co = checkout
@@ -41,6 +45,8 @@
         # for more information on different options of the below setting.
         #
         # Setting to git 2.0 default to suppress warning message
-        default = simple
-[credential]
-	helper = osxkeychain
+        default = current
+        followTags = true 
+[ghi]
+	token = !security find-internet-password -a zanthrash -s github.com -l 'ghi token' -w
+	editor = nvim
